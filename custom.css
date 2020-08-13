@@ -1,0 +1,95 @@
+/* NON ESSENTIAL CSS START - CAN BE REMOVED */
+body,
+#messagebuffer {
+    background-color: #131313 !important;
+}
+
+#chatwrap .linewrap .username,
+#userlist .userlist_item span[class^="userlist-"] {
+    color: #d0a035;
+}
+
+#chatwrap #chatbtn {
+    display: none !important;
+}
+
+#messagebuffer,
+#chatinput #chatline {
+    border: none !important;
+}
+
+#chatinput #chatline {
+    background-color: #1f1e1e !important;;
+}
+
+/*Hid these elements before realizing most of them can be hidden natively within existing hide options*/
+/*#plcontrol #showsearch,
+#plcontrol #showplaylistmanager,
+#plcontrol #showuserfilter,
+#videocontrols #volumeButtonDown,
+#videocontrols #volumeButtonIndicator,
+#videocontrols #volumeButtonUp,
+#videocontrols #quickQuality,
+#videocontrols #mediarefresh,
+#videocontrols #fullscreenbtn,
+#leftcontrols button[title="Toggle Cinema Mode"] {
+    display: none !important;
+}*/
+
+::-webkit-scrollbar {
+    width: 6px !important;
+    background: #000000 !important;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #1f1e1e !important;
+}
+
+#topBarToggle {
+    float: right;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+}
+
+#topBarToggle.top-bar-toggled {
+    margin-top: 1rem;
+}
+
+/* NON ESSENTIAL CSS END */
+
+#cd-tracker {
+display: flex;
+font-size: 12px;
+}
+
+#cd-tracker p.tracker-text {
+display: inline;
+}
+
+#cd-tracker .tracker-container {
+display: none;
+padding: 3.5px 8px;
+border: 1px solid #424242;
+}
+
+.toggle-btn.toggled{
+background-color: #882a2a;
+}
+
+.toggle-btn .toggle-btn-checkbox {
+pointer-events: none;
+margin: 0 !important;
+height: 10px;
+}
+
+.toggled-tracker {
+display: inline-block !important;
+}
+
+.userBumpAlert {
+background-color: rgba(145, 45, 225, 0.5);
+}
+
+.bump-link {
+display: block;
+}
