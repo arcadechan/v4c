@@ -394,19 +394,19 @@
 
                 let command = messageText.split(' ')[0];
 
-                console.log({messageText, command, commands});
+                // console.log({messageText, command, commands});
 
                 if(commands[command] !== undefined && !commands[command].cdRunning) {
-                    console.log(command + 'command detected. setting time out to : ' + commands[command].timeout);
+                    // console.log(command + 'command detected. setting time out to : ' + commands[command].timeout);
                     commands[command].secondsElement.text( commands[command].timeout );
                     commands[command].parentElement.toggleClass('toggled-tracker');
-                    console.log({'secondsElement': commands[command].secondsElement, 'parentElement': commands[command].parentElement});
+                    // console.log({'secondsElement': commands[command].secondsElement, 'parentElement': commands[command].parentElement});
                     commands[command].cdRunning = true;
                     let counter = commands[command].timeout;
-                    console.log({counter});
+                    // console.log({counter});
 
                     window[commands[command]['counterName']] = setInterval(function(){
-                        console.log(window[commands[command]['counterName']]);
+                        // console.log(window[commands[command]['counterName']]);
                         counter--;
                         commands[command].secondsElement.text( counter );
                         if(counter == 0 || counter < 0){
@@ -468,7 +468,16 @@
                             `;
 
                             let clone = $(link).clone();
-                            clone.removeClass('qe_title').text(updatedText.trim()).insertAfter(messageContainer);
+                            let linkHref = clone.attr('href').replace("watch?v=", "embed/");
+
+                            if(!linkHref.endsWith('.webm') && !linkHref.endsWith('.mp4')){
+                                let iframePreview = document.createElement('iframe');
+                                iframePreview.setAttribute('src', linkHref);
+
+                                $(iframePreview).insertAfter(messageContainer);
+                            }
+
+
                             break;
                         }
                     }
